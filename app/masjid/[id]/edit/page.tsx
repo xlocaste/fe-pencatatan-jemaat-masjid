@@ -11,9 +11,9 @@ const Edit = () => {
     const [kecamatan, setKecamatan] = useState('');
     const params = useParams();
     const router = useRouter();
+    const id = params.id;
 
     useEffect(() => {
-        const id = params.id;
         if (id) {
             axios.get(`http://localhost:8000/api/masjid/${id}`)
                 .then(response => {
@@ -26,7 +26,7 @@ const Edit = () => {
                 })
                 .catch(error => console.error('Error fetching Masjid:', error));
         }
-    }, [params.id]);
+    }, []);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();

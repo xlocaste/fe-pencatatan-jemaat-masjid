@@ -24,7 +24,7 @@ const Edit = () => {
           .catch((error) =>
             console.error("Error fetching jemaat items:", error)
           );
-      },);
+      },[]);
 
     useEffect(() => {
         const id = params.id;
@@ -109,7 +109,7 @@ const Edit = () => {
                             <option value="">Pilih Masjid</option>
                             {daftarMasjid.length > 0 ? (
                                 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                                daftarMasjid.map((masjid: any) => {
+                                daftarMasjid.filter((daftarMasjid, idx) => idx < 2).map((masjid: any) => {
                                 //   console.log("masjid", masjid);
 
                                 return (

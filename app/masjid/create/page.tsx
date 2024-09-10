@@ -80,6 +80,7 @@ const Create = () => {
               RW
             </label>
             <input
+                max={3}
               id="rw"
               type="numeric"
               value={rw}
